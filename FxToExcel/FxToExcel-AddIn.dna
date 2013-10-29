@@ -1,0 +1,61 @@
+<DnaLibrary Name="Spreadsheet Budget" Description="Import and manipulate data from financial file." RuntimeVersion="v4.0">
+  <ExternalLibrary Path="FXToExcel.dll" LoadFromBytes="true" Pack="false" />
+  <Reference Path="ExcelExtensions.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="StandardCode.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="FXReader.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="ExcelApi.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="FHelper.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="FSharp.Data.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="LinqTo2dArray.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="NetOffice.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="OfficeApi.dll" LoadFromBytes="false" Pack="false" />
+  <Reference Path="VBIDEApi.dll" LoadFromBytes="false" Pack="false" />
+    
+  <!-- 
+       The RuntimeVersion attribute above allows two settings:
+       * RuntimeVersion="v2.0" - for .NET 2.0, 3.0 and 3.5
+       * RuntimeVersion="v4.0" - for .NET 4 and 4.5
+
+       Additional referenced assemblies can be specified by adding 'Reference' tags. 
+       These libraries will not be examined and registered with Excel as add-in libraries, 
+       but will be packed into the -packed.xll file and loaded at runtime as needed.
+       For example:
+       
+       <Reference Path="Another.Library.dll" Pack="true" />
+  
+       Excel-DNA also allows the xml for ribbon UI extensions to be specified in the .dna file.
+       See the main Excel-DNA site at http://excel-dna.net for downloads of the full distribution.
+  -->
+  <CustomUI>
+    <!-- CommandBars Fallback for Excel version pre-2007, interpreted by ExcelDna (I just made up the namespace for future versioning) -->
+    <commandBars xmlns='http://schemas.excel-dna.net/office/2003/01/commandbars' >
+      <commandBar name='Worksheet Menu Bar'>
+        <!-- Here we add a top-level menu to the main Excel Worksheet menu -->
+        <popup caption='Spreadsheet Budget' height='19'  >
+          <button caption='Refresh Data' onAction='ImportTransactions' ></button>
+          <!--<button caption='Begin Date' onAction='OpenCalendar' ></button>-->
+        </popup>
+      </commandBar>
+    </commandBars>
+  </CustomUI>
+  
+  <CustomUI>
+    <!-- Inside here is the RibbonX xml passed to Excel -->
+    <!-- This can also be loaded by Excel 2007 because of the namespace -->
+    <customUI xmlns='http://schemas.microsoft.com/office/2006/01/customui' loadImage='LoadImage'>
+      <ribbon>
+        <tabs>
+          <tab id='CustomTab' label='Spreadsheet Budget'>
+            <group id='GroupData' label='Data'>
+              <button id='Button1' label='Refresh Data' size="large" imageMso="RecurrenceEdit" onAction='ImportTransactions' tag='ImportTransactions'
+                      screentip='Refresh XML File' supertip='Refresh financial data and pivot tables' 
+                      description='Refresh financial data and refresh pivot tables' />
+              <!--<dropDown id='ddDateBegin' label='Start Date' onAction='RunTagMacro' tag='OpenCalendar' getItemLabel='GetItemLabel' showLabel='true'
+                      screentip='Start Date of Transactions' supertip='Start date of imported transactions.' />-->
+            </group >
+          </tab>
+        </tabs>
+      </ribbon>
+    </customUI>
+  </CustomUI>
+</DnaLibrary>

@@ -10,7 +10,8 @@
     <AssemblyName>FxToExcel</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,12 +44,45 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExcelApi">
+      <HintPath>..\..\..\ReferenceLibraries\ExcelApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ExcelDna.Integration">
+      <HintPath>..\packages\Excel-DNA.0.30.3\lib\ExcelDna.Integration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExcelExtensions">
+      <HintPath>..\..\ExcelExtensions\ExcelExtensions\bin\Debug\ExcelExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="FxReader">
+      <HintPath>..\FxReader\bin\Debug\FxReader.dll</HintPath>
+    </Reference>
+    <Reference Include="FX_ExcelInterface">
+      <HintPath>..\FX_ExcelInterface\bin\Debug\FX_ExcelInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqTo2dArray">
+      <HintPath>..\..\LinqTo2dArray\LinqTo2dArray\bin\Debug\LinqTo2dArray.dll</HintPath>
+    </Reference>
+    <Reference Include="NetOffice">
+      <HintPath>..\..\..\ReferenceLibraries\NetOffice.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="OfficeApi">
+      <HintPath>..\..\..\ReferenceLibraries\OfficeApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="VBIDEApi">
+      <HintPath>..\..\..\ReferenceLibraries\VBIDEApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -62,7 +96,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="CAppEventsHandler.vb" />
+    <Compile Include="CSettings.vb" />
+    <Compile Include="MExcelEntryPoints.vb" />
+    <Compile Include="MGlobals.vb" />
+    <Compile Include="MSystemCode.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -78,6 +116,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Utilities.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -88,6 +127,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FxToExcel-AddIn.dna">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ToDo.txt" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -97,8 +140,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo F | xcopy "C:\Users\Laura\Documents\Jon Nyman KE7WYY\Dropbox\VisualStudio\Projects\FXToExcel\packages\Excel-DNA.0.30.3\tools\ExcelDna.xll" "$(TargetDir)FXToExcel-AddIn.xll" /C /Y
+"C:\Users\Laura\Documents\Jon Nyman KE7WYY\Dropbox\VisualStudio\Projects\FXToExcel\packages\Excel-DNA.0.30.3\tools\ExcelDnaPack.exe" "$(TargetDir)FXToExcel-AddIn.dna" /Y /O FXToExcel.xll
+
+echo F | xcopy "C:\Users\Laura\Documents\Jon Nyman KE7WYY\Dropbox\VisualStudio\Projects\FXToExcel\packages\Excel-DNA.0.30.3\tools\ExcelDna64.xll" "$(TargetDir)FXToExcel-AddIn.xll" /C /Y
+"C:\Users\Laura\Documents\Jon Nyman KE7WYY\Dropbox\VisualStudio\Projects\FXToExcel\packages\Excel-DNA.0.30.3\tools\ExcelDnaPack.exe" "$(TargetDir)FXToExcel-AddIn.dna" /Y /O FXToExcel64.xll</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

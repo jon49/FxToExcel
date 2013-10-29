@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE KMYMONEY-FILE>
+<KMYMONEY-FILE>
+ <FILEINFO>
+  <CREATION_DATE date="2013-07-11"/>
+  <LAST_MODIFIED_DATE date="2013-07-11"/>
+  <VERSION id="1"/>
+  <FIXVERSION id="4"/>
+ </FILEINFO>
+ <USER email="" name="">
+  <ADDRESS street="" telephone="" county="" city="" zipcode=""/>
+ </USER>
+ <INSTITUTIONS count="0"/>
+ <PAYEES count="2171">
+   <PAYEE matchingenabled="0" email="" id="P002170" name="Late Fee" reference="">
+   <ADDRESS street="" postcode="" telephone="" city="" state=""/>
+  </PAYEE>
+  <PAYEE matchingenabled="0" email="" id="P002171" name="Late Fee Reversal" reference="">
+   <ADDRESS street="" postcode="" telephone="" city="" state=""/>
+  </PAYEE>
+ </PAYEES>
+ <ACCOUNTS count="148">
+  <ACCOUNT currency="USD" description="" parentaccount="" opened="" number="" lastmodified="" type="9" id="AStd::Asset" lastreconciled="" institution="" name="Asset">
+   <SUBACCOUNTS>
+    <SUBACCOUNT id="A000137"/>
+    <SUBACCOUNT id="A000143"/>
+   </SUBACCOUNTS>
+  </ACCOUNT>
+  <ACCOUNT currency="USD" description="" parentaccount="" opened="" number="" lastmodified="" type="10" id="AStd::Liability" lastreconciled="" institution="" name="Liability">
+   <SUBACCOUNTS>
+    <SUBACCOUNT id="A000046"/>
+    <SUBACCOUNT id="A000078"/>
+   </SUBACCOUNTS>
+  </ACCOUNT>
+  <ACCOUNT currency="USD" description="" parentaccount="AStd::Expense" opened="2007-07-13" number="" lastmodified="2013-07-11" type="13" id="A000142" lastreconciled="2013-07-11" institution="" name="Parking">
+   <KEYVALUEPAIRS>
+    <PAIR key="lastStatementDate" value="2013-07-11"/>
+   </KEYVALUEPAIRS>
+  </ACCOUNT>
+  <ACCOUNT currency="USD" description="" parentaccount="AStd::Asset" opened="2013-07-11" number="" lastmodified="2013-07-11" type="1" id="A000143" lastreconciled="2013-07-11" institution="" name="Imbalance-USD">
+   <KEYVALUEPAIRS>
+    <PAIR key="lastStatementDate" value="2013-07-11"/>
+   </KEYVALUEPAIRS>
+  </ACCOUNT>
+ </ACCOUNTS>
+ <TRANSACTIONS count="5985">
+  <TRANSACTION postdate="2005-01-05" commodity="USD" memo="" id="T000000000000001557" entrydate="2013-07-03">
+   <SPLITS>
+    <SPLIT payee="P000015" reconcileflag="0" shares="-121041/100" reconciledate="" action="Withdrawal" bankid="" account="A000106" number="" value="-121041/100" memo="" id="S0001"/>
+    <SPLIT payee="P000015" reconcileflag="0" shares="121041/100" reconciledate="" action="" bankid="" account="A000006" number="" value="121041/100" memo="" id="S0002"/>
+   </SPLITS>
+  </TRANSACTION>
+  <TRANSACTION postdate="2005-01-05" commodity="USD" memo="" id="T000000000000001558" entrydate="2013-07-04">
+   <SPLITS>
+    <SPLIT payee="P000015" reconcileflag="0" shares="840461/100" reconciledate="" action="Deposit" bankid="" account="A000122" number="" value="840461/100" memo="" id="S0001"/>
+    <SPLIT payee="P000015" reconcileflag="0" shares="-840461/100" reconciledate="" action="" bankid="" account="A000006" number="" value="-840461/100" memo="" id="S0002"/>
+   </SPLITS>
+  </TRANSACTION>
+ </TRANSACTIONS>
+ <KEYVALUEPAIRS>
+  <PAIR key="kmm-baseCurrency" value="USD"/>
+  <PAIR key="kmm-id" value="{6b772d63-2671-4e00-9f92-5596576d45d5}"/>
+ </KEYVALUEPAIRS>
+ <SCHEDULES count="0"/>
+ <SECURITIES count="1">
+  <SECURITY saf="1" trading-currency="" symbol="template" type="0" id="E000001" name="template" trading-market="template"/>
+ </SECURITIES>
+ <CURRENCIES count="184">
+  <CURRENCY saf="100" symbol="ADF" type="3" id="ADF" name="Andorran Franc" ppu="100" scf="100"/>
+  <CURRENCY saf="100" symbol="ADP" type="3" id="ADP" name="Andorran Peseta" ppu="100" scf="100"/>
+ </CURRENCIES>
+ <PRICES count="21">
+  <PRICEPAIR from="ATS" to="EUR">
+   <PRICE price="10000/137603" source="KMyMoney" date="1998-12-31"/>
+  </PRICEPAIR>
+  <PRICEPAIR from="BEF" to="EUR">
+   <PRICE price="10000/403399" source="KMyMoney" date="1998-12-31"/>
+  </PRICEPAIR>
+ </PRICES>
+ <REPORTS count="0"/>
+ <BUDGETS count="0"/>
+</KMYMONEY-FILE>

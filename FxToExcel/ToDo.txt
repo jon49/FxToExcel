@@ -1,0 +1,33 @@
+﻿_____________________________________________________________________________________
+To do_______________________________________________________________________________|
+
+- Add up previous items when getting data - only save Account and Amount - Hasn't been tested
+- Updating -> Make sure this works before I release it.
+
+REPORTS
+
+- Moving AVG with variable # of items, start with 5
+- Import budget data
+- Budget charts, etc.
+
+_____________________________________________________________________________________
+Program Changes______________________________________________________________________|
+0.0.1
+Changed Table/Range naming system from WorksheetName.TableName to T.TableName
+
+_____________________________________________________________________________________
+Program Flow________________________________________________________________________|
+
+FILE OPEN
+x Open XLL file.
+- check for kToXL app updates (if there is an update as if desire to update now or after xl file is closed)
+x Open xl file (or get file location - if file location exist then create file - from template?)
+x On xl file open update from KMyMoney XML file (or ask user for XML file location)
+
+X - UPDATE FROM XML FILE
+- Check date in kmy file properties (Date modified)
+- If kmy file is newer than last update then update xl file.
+- If updated then refresh all pivot tables
+
+SETTINGS
+- Update xl file with previous dates -> year-to-date -> last 2 years -> last 5 years -> last 10 years -> all dates

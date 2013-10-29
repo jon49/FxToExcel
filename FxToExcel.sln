@@ -5,6 +5,15 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FxToExcel", "FxToExcel\FxToExcel.vbproj", "{28D02B65-243A-455B-ACF4-9E686DEB9448}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FX_ExcelInterface", "FX_ExcelInterface\FX_ExcelInterface.fsproj", "{FED3C7A5-C084-4AC0-941A-61213E12D1DB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FxReader", "FxReader\FxReader.fsproj", "{F5A2C0E8-2C79-4EA6-853B-EFFDC09EE5BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{00D2F5BC-D45E-46F6-9CC0-C177347D3C90}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +24,14 @@ Global
 		{28D02B65-243A-455B-ACF4-9E686DEB9448}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28D02B65-243A-455B-ACF4-9E686DEB9448}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28D02B65-243A-455B-ACF4-9E686DEB9448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED3C7A5-C084-4AC0-941A-61213E12D1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED3C7A5-C084-4AC0-941A-61213E12D1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED3C7A5-C084-4AC0-941A-61213E12D1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED3C7A5-C084-4AC0-941A-61213E12D1DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A2C0E8-2C79-4EA6-853B-EFFDC09EE5BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A2C0E8-2C79-4EA6-853B-EFFDC09EE5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A2C0E8-2C79-4EA6-853B-EFFDC09EE5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A2C0E8-2C79-4EA6-853B-EFFDC09EE5BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
