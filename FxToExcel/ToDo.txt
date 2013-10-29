@@ -2,7 +2,7 @@
 To do_______________________________________________________________________________|
 
 - Add up previous items when getting data - only save Account and Amount - Hasn't been tested
-- Updating -> Make sure this works before I release it.
+
 
 REPORTS
 
